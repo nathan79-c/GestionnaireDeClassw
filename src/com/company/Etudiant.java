@@ -38,7 +38,7 @@ public class Etudiant {
         }
         System.out.println(" Sa moyenne vaut "+moyenne);
     }
-    private double quelleMoyenne(){
+    public double quelleMoyenne(){
         return moyenne;
     }
 

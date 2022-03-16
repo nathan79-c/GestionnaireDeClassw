@@ -17,4 +17,20 @@ public class Cursus {
     public void afficheEtudiant(){
         for (var e : Liste) e.afficheEtudiant();
     }
+    private int ouEstlaPlusPetite(int debut){
+        int indiceDuMin = debut;
+        for(var j = debut+1; j < Liste.length; j++)
+            if(Liste[j].quelleMoyenne() <  Liste[indiceDuMin].quelleMoyenne()) indiceDuMin = j ;
+        return indiceDuMin;
+    }
+    public void  classerMoyenne (){
+        int indiceDuPlusPetit;
+        Etudiant tmp;
+        for (var i = 0; i < Liste.length; i++){
+            indiceDuPlusPetit = ouEstlaPlusPetite(i);
+            tmp = Liste[i];
+            Liste[i]= Liste[indiceDuPlusPetit];
+            Liste[indiceDuPlusPetit]=tmp;
+        }
+    }
 }// Fin de la classe Cursus;
